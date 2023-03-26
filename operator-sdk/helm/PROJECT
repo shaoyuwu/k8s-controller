@@ -4,21 +4,17 @@
 # More info: https://book.kubebuilder.io/reference/project-config.html
 domain: wusy.tech
 layout:
-- go.kubebuilder.io/v3
-projectName: kubebuilder-demo
-repo: kubebuiler-demo
+- helm.sdk.operatorframework.io/v1
+plugins:
+  manifests.sdk.operatorframework.io/v2: {}
+  scorecard.sdk.operatorframework.io/v2: {}
+projectName: helm
 resources:
 - api:
     crdVersion: v1
     namespaced: true
-  controller: true
   domain: wusy.tech
   group: ingress
   kind: App
-  path: kubebuiler-demo/api/v1beta1
-  version: v1beta1
-  webhooks:
-    defaulting: true
-    validation: true
-    webhookVersion: v1
+  version: v1alpha1
 version: "3"

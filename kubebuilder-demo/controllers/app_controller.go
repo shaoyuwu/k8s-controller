@@ -18,6 +18,8 @@ package controllers
 
 import (
 	"context"
+	ingressv1beta1 "kubebuiler-demo/api/v1beta1"
+	"kubebuiler-demo/controllers/utils"
 
 	v1 "k8s.io/api/apps/v1"
 	corev1 "k8s.io/api/core/v1"
@@ -29,9 +31,6 @@ import (
 	"sigs.k8s.io/controller-runtime/pkg/client"
 	"sigs.k8s.io/controller-runtime/pkg/controller/controllerutil"
 	"sigs.k8s.io/controller-runtime/pkg/log"
-
-	ingressv1beta1 "kubebuiler-demo/api/v1beta1"
-	"kubebuiler-demo/controllers/utils"
 )
 
 // AppReconciler reconciles a App object
@@ -41,6 +40,9 @@ type AppReconciler struct {
 }
 
 //+kubebuilder:rbac:groups=ingress.wusy.tech,resources=apps,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=apps,resources=deployments,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups=networking.k8s.io,resources=ingresses,verbs=get;list;watch;create;update;patch;delete
+//+kubebuilder:rbac:groups="",resources=services,verbs=get;list;watch;create;update;patch;delete
 //+kubebuilder:rbac:groups=ingress.wusy.tech,resources=apps/status,verbs=get;update;patch
 //+kubebuilder:rbac:groups=ingress.wusy.tech,resources=apps/finalizers,verbs=update
 

@@ -1,0 +1,13 @@
+apiVersion: ingress.wusy.tech/v1alpha1
+kind: App
+metadata:
+  name: app-sample
+spec:
+  # Default values copied from <project_dir>/helm-charts/app-chart/values.yaml
+  enable_ingress: true
+  enable_service: true
+  image: nginx:1.16
+  name: app-sample
+  replicas: 3
+  
+  
