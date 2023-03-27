@@ -1,0 +1,12 @@
+apiVersion: apps.github.io/v1beta1
+kind: HTTPClient
+metadata:
+  labels:
+    app.kubernetes.io/name: httpclient
+    app.kubernetes.io/instance: httpclient-sample
+    app.kubernetes.io/part-of: httpclient
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/created-by: httpclient
+  name: httpclient-sample
+spec:
+  # TODO(user): Add fields here
